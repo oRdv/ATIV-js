@@ -51,7 +51,7 @@ const gerarImc = function(pesoInicial, alturaInicial){
 
 //MÉDIA ESCOLAR
 
-const mediaAluno = function(nomeInicialAluno, nomeInicialProf, sexoInAluno, sexoInProf, nomeInCurso, nomeIndisc, notain1, notain2, notain3, notain4 ){
+const mediaAluno = function( notain1, notain2, notain3, notain4 ){
     let nota1 = notain1
     let nota2 = notain2
     let nota3 = notain3
@@ -106,7 +106,7 @@ const mediaAluno = function(nomeInicialAluno, nomeInicialProf, sexoInAluno, sexo
         }
         if (mediaFinal != undefined){
 
-            return novaMedia 
+            return mediaFinal
         }else {
             return false
         }  
@@ -128,37 +128,58 @@ const mediaAluno = function(nomeInicialAluno, nomeInicialProf, sexoInAluno, sexo
 
     const pronomeProfessor = (pronProfessor) => {
 
-        let sexo = (pronProfessor).toLocaleLowerCase(), pronome
+        let sexoP = (pronProfessor).toLocaleLowerCase(), pronomeP
 
-        if (sexo == ''){
+        if (sexoP == ''){
             console.log('ERRO: Demonstrar todos os valores')
             return false
 
-        }else if(sexo == 'M'){
-            pronome = 'Professor'
-        }else if (sexo == 'F')
-        pronome = 'Professora'
+        }else if(sexoP == 'M'){
+            pronomeP = 'Professor'
+        }else {
+            pronomeP = 'Professora'
+        }
+        
     }
     return pronome
     }
 
     const pronomeAluno = (pronomAluno) => {
 
-        let sexo = (pronomAluno).toLocaleLowerCase(), pronome
+        let sexoA = (pronomAluno).toLocaleLowerCase(), pronomeA
 
-        if (sexo == ''){
+        if (sexoA == ''){
             console.log('ERRO: Demonstrar todos os valores')
             return false
 
-        }else if(sexo == 'M'){
-            pronome = 'Aluno'
-        }else if(sexo == 'F'){
-            pronome = 'Aluna'
+        }else if(sexoA == 'M'){
+            pronomeA = 'Aluno'
+        }else{
+            pronomeA = 'Aluna'
+
+            console.log('Situação do aluno: ')
+            console.log(sexoA + nomeA + 'foi' + situacao + 'na disciplina ' + disc + ' e no curso ' + curso + 'pelo professor: '  + nomeP)
+            console.log('A média final é de: ' + mediaAluno)
+            
         }
 
         return pronome
     
     }
+
+
+ //
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
     gerarImc,
